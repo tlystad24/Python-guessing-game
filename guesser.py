@@ -14,7 +14,7 @@ def main():
 	
 		userGuess = input("Your guess: ")
 		if userGuess == randomNumber:
-			print ("Correct!")
+			print ("You guessed the correct number!")
 			found = True
 			
 		elif userGuess > randomNumber:
