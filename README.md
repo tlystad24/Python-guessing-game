@@ -4,4 +4,6 @@
 A simple game using Python where the user has to guess a number generated between 1 and 100.
 
 ## Usage:
-`python guesser.py`
+```bash
+python guesser.py
+```
