@@ -1,36 +1,39 @@
 #!/usr/bin/env python
-"""Python guessing game by @tlystad24
-This program creates a random number between 1 and 100 and has the user guess it.
-"""
+# text-based guessing game written in Python by @tlystad24
+
+
+# Import random library to generate the number to guess.
 import random
 
+
 def main():
-	attempts = 1
-	print "How many numbers do you want?"
-	howMany = input("Ammount: ")
-	# print "Guess the number between 1 and",howMany,"."
-	print 'Guess the number between 1 and {}.'.format(howMany)
-	#randomNumber = 35 <- Number used for debugging and early development.
-	randomNumber = random.randint(1,howMany)
-	found = False # flag variable to see if they guessed it.
+    attempts = 1  # Initial count of attempts. Minimum is 1.
+    print "How many numbers do you want?"
+    # Declare variable to generate random number inside range.
+    howMany = input("Ammount: ")
+    if howMany == 1:
+        print "Pick a number greater than 1!"
+        main()  # If the number is 1, return to main.
 
-	while not found:
+    else:  # if the number is greater than 1, continue.
+        print 'Guess the number between 1 and {}.'.format(howMany)
+        randomNumber = random.randint(1, howMany)
+        found = False  # declare found as false.
 
-		userGuess = input("Your guess: ")
-		if userGuess == randomNumber:
-			print "You have guessed the correct number! You used",attempts,"attempts."
-			found = True
+        while not found:  # while the user has not guessed the correct number.
 
-		elif userGuess > randomNumber:
-			print ("Guess lower!")
-			attempts = attempts + 1
-		else:
-			print ("Guess higher!")
-			attempts = attempts +1
+            userGuess = input("Your guess: ")
+            if userGuess == randomNumber:
+                print "You have guessed the correct number! You used", attempts, "attempts."
+                found = True  # declare found as true which ends the program
 
-
-
+            elif userGuess > randomNumber:  # if the user is less than the generated number
+                print ("Guess lower!")
+                attempts = attempts + 1  # add one attempt to the counter
+            else:
+                print ("Guess higher!")
+                attempts = attempts + 1  # add one attempt to the counter
 
 
 if __name__ == "__main__":
-	main()
+    main()
