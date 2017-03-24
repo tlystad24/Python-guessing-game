@@ -34,6 +34,13 @@ def main():
                 print ("Guess higher!")
                 attempts = attempts + 1  # add one attempt to the counter
 
+            if found == True:
+                if userGuess < 5:
+                    print ('You are a guessing master!')
+                else:
+                    print ('You can do better, try again?')
+
+
 
 if __name__ == "__main__":
     main()
